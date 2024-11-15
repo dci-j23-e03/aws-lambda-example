@@ -19,9 +19,6 @@ public class S3Handler implements RequestHandler<S3Event, String> {
         String bucket = record.getS3().getBucket().getName();
         String key = record.getS3().getObject().getUrlDecodedKey();
 
-        logger.log("EVENT:" + gson.toJson(s3Event));
-        logger.log("CONTEXT:" + gson.toJson(context));
-        logger.log("RECORD:" + gson.toJson(record));
         logger.log("BUCKET: " + bucket);
         logger.log("KEY: " + key);
 
