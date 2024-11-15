@@ -19,11 +19,11 @@ public class S3Handler implements RequestHandler<S3Event, String> {
         String bucket = record.getS3().getBucket().getName();
         String key = record.getS3().getObject().getUrlDecodedKey();
 
-        logger.log("Event:" + gson.toJson(s3Event));
-        logger.log("Context:" + gson.toJson(context));
-        logger.log("Record:" + gson.toJson(record));
-        logger.log("Bucket: " + bucket);
-        logger.log("Key: " + key);
+        logger.log("EVENT:" + gson.toJson(s3Event));
+        logger.log("CONTEXT:" + gson.toJson(context));
+        logger.log("RECORD:" + gson.toJson(record));
+        logger.log("BUCKET: " + bucket);
+        logger.log("KEY: " + key);
 
         return "File from S3 arrived!";
     }
